@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SMS Spam Classifier</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+<div class="wrapper">
+    <div class="container">
+      <h1>📨 SMS Spam Classifier</h1>
+      <p class="subtitle">Enter an SMS message below to check if it's spam or not.</p>
+      <form action="/predict" method="POST">
+          <textarea name="message" placeholder="Type your message here..." required></textarea>
+          <button type="submit">Check Now</button>
+      </form>
+      {% if prediction_text %}
+          <div class="result">{{ prediction_text }}</div>
+      {% endif %}
+  </div>
+</div>
+
+</body>
+</html>
