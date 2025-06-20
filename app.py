@@ -1,18 +1,22 @@
 from flask import Flask, request, render_template
 import pickle
-import nltk
 import string
 from nltk.corpus import stopwords
 from nltk.stem.porter import PorterStemmer
+import nltk
+import os
+
+nltk.data.path.append(os.path.join(os.path.dirname(__file__), 'nltk_data'))
 
 nltk.download('punkt')       # Tokenizer
 nltk.download('stopwords')   # Stopword list
+
 
 stemmer = PorterStemmer()
 
 def transform(text):
     text = text.lower() 
-    text = nltk.word_tokenize(text)
+    text = nltk_download_data.word_tokenize(text)
 
     y = []
     for i in text:
