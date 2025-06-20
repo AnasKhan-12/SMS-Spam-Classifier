@@ -16,7 +16,7 @@ stemmer = PorterStemmer()
 
 def transform(text):
     text = text.lower() 
-    text = nltk_download_data.word_tokenize(text)
+    text = nltk.word_tokenize(text)
 
     y = []
     for i in text:
